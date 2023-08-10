@@ -1,5 +1,5 @@
 body {
-    background-color: #E8E6E6;
+    background-color: #EBECF0;
     margin: 0;
     font-family: 'Inter', sans-serif;
 }
@@ -7,6 +7,10 @@ body {
 .row {
     display: flex;
     align-items: center;
+}
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
 
 .buttons {
@@ -19,4 +23,97 @@ body {
 
 .buttons button {
     margin: 5px 0;
+}
+.slideCall:after{
+    content:"Arayın";
+    position:absolute;
+    width:100%;
+    height:100%;
+    left:0;
+    text-align:center;
+    -webkit-transition: all 400ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
+}
+
+.slideCall:before {
+    content: "Telefon no 📞";
+    height:100%;
+    width:100%;
+    position:absolute;
+    color:#383736;
+    left:-100%;
+    opacity: 0;
+    -webkit-transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
+}
+
+.slideCall:hover{
+    background:#383736;
+}
+
+.slideCall:hover:before{
+    left:0;
+    opacity:1;
+    color:#fff;
+}
+.slideCall:hover:after{
+    left:100%;
+    opacity:0;
+}
+button {
+    position: relative;
+//display:block;
+    height: 45px;
+    width: 150px;
+    margin: 10px 7px;
+    padding: 5px 5px;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 2px;
+    color: #383736;
+    border: 2px #383736 solid;
+    border-radius: 4px;
+    text-transform: uppercase;
+    outline: 0;
+    overflow:hidden;
+    background: none;
+    z-index: 1;
+    cursor: pointer;
+    transition:         0.08s ease-in;
+    -o-transition:      0.08s ease-in;
+    -ms-transition:     0.08s ease-in;
+    -moz-transition:    0.08s ease-in;
+    -webkit-transition: 0.08s ease-in;
+}
+.slideEmail:after{
+    content:"Email gönderin";
+    position:absolute;
+    width:100%;
+    height:100%;
+    left:0;
+    text-align:center;
+    -webkit-transition: all 400ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
+}
+
+.slideEmail:before {
+    content:"Email adresi ✉️";
+    height:100%;
+    width:100%;
+    position:absolute;
+    color:#383736;
+    left:-100%;
+    opacity: 0;
+    -webkit-transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
+}
+
+.slideEmail:hover{
+    background:#383736;
+}
+
+.slideEmail:hover:before{
+    left:0;
+    opacity:1;
+    color:#fff;
+}
+.slideEmail:hover:after{
+    left:100%;
+    opacity:0;
 }
