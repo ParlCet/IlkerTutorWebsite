@@ -1,5 +1,6 @@
 const lines = document.querySelectorAll('.line');
 const buttons = document.querySelectorAll('.buttons button');
+const image = document.querySelector('.img-fluid'); // Get the image element
 
 lines.forEach((line, index) => {
     const words = line.textContent.split(' ');
@@ -34,4 +35,16 @@ lines[1].addEventListener('animationend', () => {
             button.style.transform = 'translateY(0)';
         });
     }, 3000); // Adjust the delay as needed
+});
+image.classList.add('img-fade-in');
+image.style.opacity = '0';
+image.style.transform = 'translateY(20px)';
+
+// Add an event listener to trigger image animation when the last line's animation ends
+lines[1].addEventListener('animationend', () => {
+    // Set a delay for image animation after the last line's animation has ended
+    setTimeout(() => {
+        image.style.opacity = '1';
+        image.style.transform = 'translateY(0)';
+    }, 1000); // Adjust the delay as needed
 });
